@@ -1,1 +1,1 @@
-web: gunicorn girlsinspace.wsgi --log-file -
+web: gunicorn GirlsInSpace.wsgi --log-file -
