@@ -1,4 +1,6 @@
-{% load static wagtailuserbar %}
+{% load static wagtailuserbar menus_tags %}
+
+{% get_menu "main" as nav %}
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -27,6 +29,12 @@
 
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
+
+        {% for item in nav.menu_items.all %}
+            <li>
+                <a href="{{ item.link }}"{% if item.open_in_new_tab %} target="blank"{% endif %}>{{ item.title }}</a>
+            </li>
+        {% endfor %}
 
         {% block content %}{% endblock %}
 
