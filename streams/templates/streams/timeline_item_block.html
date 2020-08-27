@@ -12,7 +12,7 @@
             <div class="single-item active">
                 <span>{{ item.date }}</span>
                 <div class="img-area">
-                    <a href="#">
+                    <a href="{% if item.item_page %}{{ item.item_page }}{% elif item.item_url %}{{ item.item_url }}{% else %}#{% endif %}">
                         <img src="{{ img.url }}" alt="{{ img.alt }}">
                         <div class="text-area">
                         <span>{{ item.title }}</span>
