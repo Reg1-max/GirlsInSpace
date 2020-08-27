@@ -9,6 +9,10 @@ h1{
     margin-top: 8%;
 }
 
+p{
+    font-size: x-large;
+}
+
 .rich-text img.richtext-image.right, .rich-text img.richtext-image.full-width{
     float: right;
     clear: left;
