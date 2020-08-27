@@ -8,7 +8,7 @@
     <div class="timeline-area">
         <div class="line-area"></div>
         {% for item in self.timeline_item %}
-            {% image item.image max-320x320 as img %}
+            {% image item.image fill-320x320 as img %}
             <div class="single-item">
                 <span>{{ item.date }}</span>
                 <div class="img-area">
