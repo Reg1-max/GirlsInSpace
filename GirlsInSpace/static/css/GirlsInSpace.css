@@ -9,6 +9,18 @@ h1{
     margin-top: 8%;
 }
 
+.rich-text img.richtext-image.right, .rich-text img.richtext-image.full-width{
+    float: right;
+    clear: left;
+    margin: 1rem;
+  }
+  
+  .rich-text img.richtext-image.left{
+    float: left;
+    clear: right;
+    margin: 1rem;
+  }
+
 a:hover {
     color: #157ab5;
     text-decoration: none;
