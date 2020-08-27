@@ -1,13 +1,16 @@
 body{
-    background: #262626;
+    background: #8ac5e2;
 }
 
 h1{
     color: #fff;
     text-align: center;
     margin-top: 8%;
-    font-family: bignoodletitling;
-    letter-spacing: 5px;
+}
+
+a:hover {
+    color: #157ab5;
+    text-decoration: none;
 }
 
 .wrapper{
@@ -91,17 +94,20 @@ h1{
 }
 
 .img-area a .text-area{
-    position: absolute;
+    padding-top: 5px;
     width: 250%;
     margin-left: -75%;
+    top: 0;
     bottom: -100px;
     left: 0;
-    font-family: poppins;
     font-size: 20px;
-    text-transform: uppercase;
     text-decoration: none;
-    white-space: nowrap;
+    white-space: pre-line;
     color: #ddd;
+}
+
+.img-area a .text-area > span{
+    text-transform: uppercase;
 }
 
 .img-area a .text-area > p{
