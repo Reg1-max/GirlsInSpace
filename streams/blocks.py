@@ -9,6 +9,8 @@ class TimelineItemBlock(blocks.StructBlock):
                 ('title', blocks.CharBlock(required=True, help_text="name the event here")),
                 ('image', ImageChooserBlock(required=False, help_text="insert an image to go with your event (optional)")),
                 ('text', blocks.TextBlock(required=True, help_text="describe the event here")),
+                ('item_page', blocks.PageChooserBlock(required=False, help_text="use if you want to link item to another page")),
+                ('item_url', blocks.URLBlock(required=False, help_text="use if you want to go to external links")),
             ]
         )
     )

@@ -1,0 +1,30 @@
+{% load wagtailimages_tags %}
+
+{% block content %}
+
+<div class="card-columns">
+{% for card in self.cards %}
+    {% image card.image max-320x320 as img%}
+        <div class="card" style="display: inline-block;">
+            <img src="{{img.url}}" alt="{{img.alt}}" class="card-img-top"/>
+            <div class="card-body">
+                <h5 class="card-title">{{ card.title }}</h5>
+                <p class="card-text">{{ card.text }}</p>
+                {% if card.button_page %}
+                        <a href="{{ card.button_page.url }}" class="btn btn-secondary">
+                            {% if not card.button_title %}
+                                {{ card.button_page.title }}
+                            {% else %}
+                                {{ card.button_title }}
+                            {% endif %}
+                        </a>
+                    {% elif card.button_url %}
+                        <a href=" {{ card.button_url }}" class="btn btn-secondary">
+                            {{ card.button_title }}
+                        </a>
+                    {% endif %}
+            </div>
+        </div> 
+{% endfor %}
+</div>
+{% endblock %}
