@@ -2,5 +2,6 @@
 {% load wagtailcore_tags %}
 
 {% block content %}
-    {{ self }}
+    <h1>{{ self.title }}</h1>
+    {{ self.body }}
 {% endblock content %}
