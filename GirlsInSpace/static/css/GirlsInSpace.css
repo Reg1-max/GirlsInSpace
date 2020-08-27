@@ -1,5 +1,6 @@
 body{
     background: #8ac5e2;
+    color: #fff;
 }
 
 h1{
@@ -94,7 +95,8 @@ a:hover {
 }
 
 .img-area a .text-area{
-    padding-top: 5px;
+    background-color: #fff;
+    border-radius: 10px;
     width: 250%;
     margin-left: -75%;
     top: 0;
@@ -102,16 +104,29 @@ a:hover {
     left: 0;
     font-size: 20px;
     text-decoration: none;
-    white-space: pre-line;
     color: #ddd;
+    box-shadow: -5px 5px 10px 5px #555555;
 }
 
 .img-area a .text-area > span{
     text-transform: uppercase;
+    background-color: #157ab5;
+    display: inline-block;
+    top: 0;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .img-area a .text-area > p{
     font-size: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #555555;
 }
 
 .img-area a .text-area:after{
