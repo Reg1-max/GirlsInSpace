@@ -1,0 +1,28 @@
+{# this doesn't extend base.html #}
+{# this is because this template is going to be used as part of a bigger template #}
+{# so to avoid repition of an entire html file (and markup errors), this doesn't extend base.html #}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+<div class="wrapper">
+    <div class="timeline-area">
+        <div class="line-area"></div>
+        {% for item in self.timeline_item %}
+            {% image item.image max-320x320 as img %}
+            <div class="single-item active">
+                <span>{{ item.date }}</span>
+                <div class="img-area">
+                    <a href="#">
+                        <img src="{{ img.url }}" alt="{{ img.alt }}">
+                        <div class="text-area">
+                        <span>{{ item.title }}</span>
+                            <p>{{ item.text }}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

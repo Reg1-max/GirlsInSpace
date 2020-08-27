@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'home',
     'search',
     'flex',
+    'timeline',
     'streams',
     'menus',
     

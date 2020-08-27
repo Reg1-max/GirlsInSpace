@@ -39,9 +39,16 @@
         {% block content %}{% endblock %}
 
         {# Global javascript #}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ==" crossorigin="anonymous"></script>
         <script type="text/javascript" src="{% static 'js/GirlsInSpace.js' %}"></script>
 
         {% block extra_js %}
+        <script>
+            $(".wrapper .single-item > span").on("mouseenter mouseleave", function(e){
+                $(".wrapper .single-item.active").removeClass("active");
+                $(this).parent().addClass("active");
+            });
+        </script>
             {# Override this in templates to add extra javascript #}
         {% endblock %}
     </body>

@@ -1,6 +1,23 @@
 from wagtail.core import blocks
 from wagtail.images.blocks import ImageChooserBlock
 
+class TimelineItemBlock(blocks.StructBlock):
+    timeline_item = blocks.ListBlock(
+        blocks.StructBlock(
+            [
+                ('date', blocks.DateBlock(required=True, help_text="enter the date that the event happened on")),
+                ('title', blocks.CharBlock(required=True, help_text="name the event here")),
+                ('image', ImageChooserBlock(required=False, help_text="insert an image to go with your event (optional)")),
+                ('text', blocks.TextBlock(required=True, help_text="describe the event here")),
+            ]
+        )
+    )
+    
+    class Meta: # noqa
+        template = "streams/timeline_item_block.html"
+        icon = "edit"
+        label = "Timeline Item"
+
 class CardBlock(blocks.StructBlock):
     cards = blocks.ListBlock(
         blocks.StructBlock(
