@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags%}
+{% load wagtailcore_tags %}
     
 {% block content %}
-    {{ page.title }}
+    <h1 class="center">{{ page.title }}</h1>
     {% for child in self.body %}
         {% if child.block_type == 'heading' %}
-            {{ child }}
+            <h2>{{ child }}</h2>
         {% elif child.block_type == 'paragraph' %}
             {{ child }}
         {% else %}
