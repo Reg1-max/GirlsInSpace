@@ -20,6 +20,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {# Global stylesheets #}
+        <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="{% static 'css/GirlsInSpace.css' %}">
 
         {% block extra_css %}
@@ -30,16 +32,32 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
-        {% for item in nav.menu_items.all %}
-            <li>
-                <a href="{{ item.link }}"{% if item.open_in_new_tab %} target="blank"{% endif %}>{{ item.title }}</a>
-            </li>
-        {% endfor %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Girls in Space</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav mr-auto">
+                {% for item in nav.menu_items.all %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ item.link }}"{% if item.open_in_new_tab %} target="blank"{% endif %}>{{ item.title }}</a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </nav>
+
+        <div class="ph3 ph5-ns pt1 pt3-ns">
         {% block content %}{% endblock %}
+        </div>
 
         {# Global javascript #}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ==" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <script type="text/javascript" src="{% static 'js/GirlsInSpace.js' %}"></script>
 
         {% block extra_js %}
