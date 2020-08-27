@@ -9,7 +9,7 @@
         <div class="line-area"></div>
         {% for item in self.timeline_item %}
             {% image item.image max-320x320 as img %}
-            <div class="single-item active">
+            <div class="single-item">
                 <span>{{ item.date }}</span>
                 <div class="img-area">
                     <a href="{% if item.item_page %}{{ item.item_page }}{% elif item.item_url %}{{ item.item_url }}{% else %}#{% endif %}">
