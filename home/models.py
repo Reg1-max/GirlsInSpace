@@ -25,5 +25,6 @@ class HomePage(Page):
     )
 
     content_panels = Page.content_panels + [
-        StreamFieldPanel('body', classname="full"),
+        StreamFieldPanel('body'),
+        ImageChooserPanel('background_image'),
     ]
