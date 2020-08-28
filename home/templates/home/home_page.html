@@ -1,7 +1,31 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% image page.background_image max-1920x720 as background %}
 
-{% block content %}
+
     <h1>{{ self.title }}</h1>
     {{ self.body }}
+
+
+{% block content %}
+<div class="vh-100 dt w-100 tc bg-dark-gray white cover" style="background:url({{ background.url }}) no-repeat center;">
+    <div class="dtc v-mid">
+    <h1 class="f1 f-headline-l fw1 i white-60">{{ self.title }}</h1>
+    <blockquote class="ph0 mh0 measure f4 lh-copy center">
+        {% for child in self.body %}   
+            {% if child.block_type == 'heading' %}
+                <h2 class="fw1 white-70">
+                    {{ child }}
+            {% elif child.block_type == 'paragraph' %}
+                <p class="fw1 white-70">
+                    {{ child }}
+                </p>
+            {% else %}
+                {{ child }}
+            {% endif %}
+        {% endfor %}
+        <cite class="f6 ttu tracked fs-normal">Made as part of the <a href="https://www.stemettes.org">Stemettes</a> Outbox Programme 2020</cite>
+    </blockquote>
+    </div>
+</div>
 {% endblock content %}
