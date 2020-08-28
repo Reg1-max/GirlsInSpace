@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
     
 {% block content %}
     <h1 class="center f-subheadline pb3">{{ page.title }}</h1>
@@ -8,6 +8,8 @@
             <h2>{{ child }}</h2>
         {% elif child.block_type == 'paragraph' %}
             {{ child }}
+        {% elif child.block_type == 'image' %}
+            {% image child.value max-920x920 %}
         {% else %}
             {{ child }}
         {% endif %}
